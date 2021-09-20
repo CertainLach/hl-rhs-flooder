@@ -1,0 +1,35 @@
+== Highload++ rsh ddos challenge
+
+.Description
+
+```
+USAGE:
+    ddos [OPTIONS] --batches <batches> --reqs <reqs>
+
+FLAGS:
+    -h, --help
+            Prints help information
+
+    -V, --version
+            Prints version information
+
+
+OPTIONS:
+        --batches <batches>
+            How many connections should be opened to every host
+
+        --hosts <hosts>...
+            Hosts to use, resolve rhsbin.tech to get them
+
+        --reqs <reqs>
+            How many requests should be joined to one bulk
+
+            If too low - then this program won't be io-bounded,
+            If too high - stats will be inaccurate
+```
+
+.Command example
+
+```bash
+cargo run --release -- --batches 8 --hosts rshbin.tech:80 --reqs 8192
+```
